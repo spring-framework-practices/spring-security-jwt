@@ -1,0 +1,33 @@
+#============================== Configuration Apache TomCat
+server:
+  port: 8080
+#============================== Configuration Logging
+logging:
+  file: /tmp/log/library-service.log
+  level:
+    root: INFO
+    org.springframework: INFO
+    org.springframework.data: INFO
+    guru.springframework.controllers: INFO
+    org.hibernate: INFO
+    com.trl.libraryservice: DEBUG
+
+spring:
+  profiles.active: dev
+  application:
+    name: spring-security
+
+  #============================== Configuration DB
+  datasource:
+    username: developer
+    password: 1,5Lht.nt!o0#
+    url: jdbc:postgresql://localhost:5432/spring_security
+    driver-class-name: org.postgresql.Driver
+
+  #============================== Configuration JPA
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
